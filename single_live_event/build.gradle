@@ -2,6 +2,11 @@ plugins {
     id 'com.android.library'
 }
 
+project.ext {
+    artifactId = 'single_live_event'
+    groupId = 'com.github.aakumykov'
+}
+
 android {
     namespace 'com.github.aakumykov.single_live_event'
     compileSdk 33
@@ -9,6 +14,8 @@ android {
     defaultConfig {
         minSdk 21
         targetSdk 33
+        versionCode 1
+        versionName "0.1"
 
 //        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -34,3 +41,5 @@ dependencies {
 //    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
 //    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
 }
+
+apply from: '../../publish_local.gradle'
